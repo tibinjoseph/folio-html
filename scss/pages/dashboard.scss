@@ -1,0 +1,200 @@
+@import "../includes/mixins";
+@import "../includes/variables";
+@import "../includes/fonts";
+
+main {
+    font-family: $primaryFont;
+    color: $bodyColor;
+    font-size: $globalFontSize;
+    section {
+        padding: 50px 0;
+        &.dashboard {
+            background: rgb(246,246,248);
+            background: linear-gradient(180deg, 
+            rgba(246,246,248,0) 0%, rgba(246,246,248,1) 100%);
+            .content-wrapper {
+                @include gridbox;
+                @include grid-template-columns(2fr 1fr);
+                .content-block {
+                    .title-block {
+                        .title {
+                            font-size: 32px;
+                            font-weight: 700;
+                            line-height: 1.2;
+                        }
+                    }
+                    .details-block {
+                        border-top: 1px solid #8B8B8B;
+                        border-bottom: 1px solid #8b8b8b;
+                        padding: 20px 0;
+                        margin-top: 40px;
+                        @include gridbox;
+                        @include grid-template-columns(1fr 1fr 320px);
+                        .columns {
+                            padding-right: 25px;
+                            &:not(:first-child) {
+                                padding-left: 25px;
+                            }
+                            &:not(:last-child) {
+                                border-right: 1px solid #8b8b8b;
+                            }
+                            .label {
+                                font-weight: 700;
+                                margin-bottom: 0.75rem;
+                            }
+                            .budget {
+                                font-size: 32px;
+                                font-weight: 700;
+                                color: $black-60;
+                                line-height: 25px;
+                                small {
+                                    font-size: 18px;
+                                }
+                            }
+                            .status {
+                                display: inline-block;
+                                padding: 0.30rem 1.25rem;
+                                border: 1px solid $primaryColor;
+                                color: $primaryColor;
+                                background-color: lighten($primaryColor, 33%);
+                                @include border-radius(4px);
+                            }
+                            .influencer-list {
+                                @include flexbox;
+                                @include align-items(center);
+                                column-gap: 20px;
+                                .influencer-item {
+                                    @include inline-flex;
+                                    @include flex-direction(column);
+                                    @include align-items(center);
+                                    .thumbnail {
+                                        display: inline-block;
+                                        position: relative;
+                                        width: 48px;
+                                        height: 48px;
+                                        @include border-radius(1000px);
+                                        img {
+                                            width: 100%;
+                                            @include border-radius(1000px);
+                                        }
+                                        .notification {
+                                            width: 14px;
+                                            height: 14px;
+                                            background-color: #8E72FF;
+                                            border: 1px solid #B8B8B8;
+                                            @include border-radius(1000px);
+                                            position: absolute;
+                                            bottom: 5px;
+                                            right: -5px;
+                                        }
+                                    }
+                                    .influencer {
+                                        font-size: 12px;
+                                        color: $black-60;
+                                    }
+                                } 
+                                .more-influencers {
+                                    color: $black-60;
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .card-wrapper {
+                margin-top: 50px;
+                @include gridbox;
+                gap: 50px;
+                .card-block {
+                    @include gridbox;
+                    @include grid-template-columns(repeat(3, 1fr));
+                    gap: 25px;
+                    &.coupons {
+                        @include grid-template-columns(repeat(4, 225px));
+                        .ui-card {
+                            .ui-card-header {
+                                .title {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                    &.widgets2-1 {
+                        @include grid-template-columns(2fr 1fr);
+                        .ui-card {
+                            &.camping-overview {
+                                .ui-card-header {
+                                    .title-block,
+                                    .graph-info {
+                                        @include flexbox;
+                                        @include align-items(center);
+                                    }
+                                    .graph-info {
+                                        gap: 20px;
+                                        .hint {
+                                            color: #b4b4b6;
+                                            font-weight: 600;
+                                            .indicator {
+                                                display: inline-block;
+                                                width: 12px;
+                                                height: 12px;
+                                                margin-right: 7px;
+                                                @include border-radius(1000px);
+                                                background-color: #ccc;
+                                            }
+                                        }
+                                    }
+                                    .dates {
+                                        color: #7f7f7f;
+                                        font-weight: 700;
+                                    }
+                                }
+                            }
+                            &.influencers-engage {
+                                .label {
+                                    font-size: 18px;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+                    .ui-card {
+                        background-color: $white;
+                        @include border-radius(20px);
+                        &.active {
+                            background-color: #F2EAFF;
+                        }
+                        .ui-card-header,
+                        .ui-card-body {
+                            padding: 1.25rem;
+                        }
+                        .ui-card-header {
+                            padding-bottom: 0;
+                            .title { 
+                                font-size: 24px;
+                                font-weight: 700;
+                            }
+                        }
+                        .ui-card-body {
+                            .count {
+                                font-size: 32px;
+                                color: $black-60;
+                                font-weight: 700;
+                                line-height: initial;
+                            }
+                            .description {
+                                color: #7f7f7f;
+                                font-weight: 700;
+                            }
+                            .progress-wrapper {
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

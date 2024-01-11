@@ -1,0 +1,27 @@
+$primaryColor: #FA3455;
+$primaryColor2: #A8299A;
+$bodyColor:#292929;
+$borderColor: #dbdade;
+$black: #000000;
+$white: #ffffff;
+$light: #eeeeee;
+$info: #23d7f0;
+$danger: #e16065;
+$primary: #7c6fd8;
+$success: #3ec276;
+$warning: #fa9d4d;
+
+// color shades
+$black-60: mix($black, $white, 70%);
+$black-50: mix($black, $white, 50%);
+$black-40: mix($black, $white, 60%);
+$white-50: mix($white, $black-60, 50%);
+
+// font
+$globalFontSize: 16px;
+$primaryFont: 'SF Pro Display', sans-serif;
+
+// radius
+$maxRadius: 9999px;
+
+

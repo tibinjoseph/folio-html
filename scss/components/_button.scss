@@ -1,0 +1,36 @@
+@import "../includes/mixins";
+@import "../includes/variables";
+
+.button {
+    border: 1px solid transparent;
+    @include border-radius(0.35rem);
+    padding: 0.75rem 1.5rem;
+    min-height: 32px;
+    white-space: nowrap;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 600;
+    @include inline-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include border-radius(10px);
+    &.button-outline-primary {
+        color: $primaryColor;
+        border-color: $primaryColor;
+        background-color: transparent;
+        
+    }
+    &.button-outline-primary-gradient-light {
+        background: 
+        linear-gradient(lighten($primaryColor, 38%), lighten($primaryColor, 38%)) padding-box,
+        linear-gradient(60deg, $primaryColor, $primaryColor2) border-box;
+        color: $primaryColor2;
+    }
+    &.button-white {
+        background-color: $white;
+    }
+    &.button-link {
+        color: $primaryColor;
+        padding: 0;
+    }
+}
