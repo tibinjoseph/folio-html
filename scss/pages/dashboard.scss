@@ -5,7 +5,7 @@
 main {
     font-family: $primaryFont;
     color: $bodyColor;
-    font-size: $globalFontSize;
+    font-size: var(--global-font-size);
     section {
         padding: 50px 0;
         &.dashboard {
@@ -18,7 +18,7 @@ main {
                 .content-block {
                     .title-block {
                         .title {
-                            font-size: 32px;
+                            font-size: calc(var(--global-font-size) * 2);
                             font-weight: 700;
                             line-height: 1.2;
                         }
@@ -43,12 +43,14 @@ main {
                                 margin-bottom: 0.75rem;
                             }
                             .budget {
-                                font-size: 32px;
                                 font-weight: 700;
                                 color: $black-60;
-                                line-height: 25px;
-                                small {
-                                    font-size: 18px;
+                                .value {
+                                    font-size: calc(var(--global-font-size) * 2);
+                                    line-height: 25px;
+                                }
+                                .small {
+                                    font-size: calc(var(--global-font-size) + 2px);
                                 }
                             }
                             .status {
@@ -116,7 +118,7 @@ main {
                         .ui-card {
                             .ui-card-header {
                                 .title {
-                                    font-size: 18px;
+                                    font-size: calc(var(--global-font-size) + 2px);
                                 }
                             }
                         }
@@ -154,7 +156,7 @@ main {
                             }
                             &.influencers-engage {
                                 .label {
-                                    font-size: 18px;
+                                    font-size: calc(var(--global-font-size) + 2px);
                                     font-weight: 700;
                                 }
                             }
@@ -173,13 +175,13 @@ main {
                         .ui-card-header {
                             padding-bottom: 0;
                             .title { 
-                                font-size: 24px;
+                                font-size: calc(var(--global-font-size) + 5px);
                                 font-weight: 700;
                             }
                         }
                         .ui-card-body {
                             .count {
-                                font-size: 32px;
+                                font-size: calc(var(--global-font-size) * 2);
                                 color: $black-60;
                                 font-weight: 700;
                                 line-height: initial;

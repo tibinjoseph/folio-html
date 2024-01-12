@@ -1,3 +1,5 @@
+@import "./mixins";
+
 $primaryColor: #FA3455;
 $primaryColor2: #A8299A;
 $bodyColor:#292929;
@@ -17,8 +19,23 @@ $black-50: mix($black, $white, 50%);
 $black-40: mix($black, $white, 60%);
 $white-50: mix($white, $black-60, 50%);
 
-// font
+// font size
 $globalFontSize: 16px;
+:root {
+  --global-font-size: #{$globalFontSize - 2};
+}
+@include breakpoint(mn576) {
+    :root {
+      --global-font-size: #{$globalFontSize - 1};
+    }
+}
+@include breakpoint(mn1440) {
+    :root {
+      --global-font-size: #{$globalFontSize};
+    }
+}
+
+// font family
 $primaryFont: 'SF Pro Display', sans-serif;
 
 // radius

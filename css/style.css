@@ -1,3 +1,20 @@
+/* line 24, ../scss/includes/_variables.scss */
+:root {
+  --global-font-size: 14px;
+}
+
+@media (min-width: 576px) {
+  /* line 28, ../scss/includes/_variables.scss */
+  :root {
+    --global-font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  /* line 33, ../scss/includes/_variables.scss */
+  :root {
+    --global-font-size: 16px;
+  }
+}
 /* line 4, ../scss/includes/_utils.scss */
 .bgc-primary {
   background-color: #FA3455 !important;
@@ -138,6 +155,23 @@
   font-style: italic;
   font-display: swap;
 }
+/* line 24, ../scss/includes/_variables.scss */
+:root {
+  --global-font-size: 14px;
+}
+
+@media (min-width: 576px) {
+  /* line 28, ../scss/includes/_variables.scss */
+  :root {
+    --global-font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  /* line 33, ../scss/includes/_variables.scss */
+  :root {
+    --global-font-size: 16px;
+  }
+}
 /* line 4, ../scss/components/_button.scss */
 .button {
   border: 1px solid transparent;
@@ -192,6 +226,23 @@
   padding: 0;
 }
 
+/* line 24, ../scss/includes/_variables.scss */
+:root {
+  --global-font-size: 14px;
+}
+
+@media (min-width: 576px) {
+  /* line 28, ../scss/includes/_variables.scss */
+  :root {
+    --global-font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  /* line 33, ../scss/includes/_variables.scss */
+  :root {
+    --global-font-size: 16px;
+  }
+}
 @font-face {
   font-family: 'SF Pro Display';
   src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff"), url("../fonts/SFProDisplay-Regular.ttf") format("truetype");
@@ -252,7 +303,7 @@
 main {
   font-family: "SF Pro Display", sans-serif;
   color: #292929;
-  font-size: 16px;
+  font-size: var(--global-font-size);
 }
 /* line 9, ../scss/pages/dashboard.scss */
 main section {
@@ -272,7 +323,7 @@ main section.dashboard .content-wrapper {
 }
 /* line 20, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .title-block .title {
-  font-size: 32px;
+  font-size: calc(var(--global-font-size) * 2);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -306,16 +357,19 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
 }
 /* line 45, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .budget {
-  font-size: 32px;
   font-weight: 700;
   color: #4d4d4d;
+}
+/* line 48, ../scss/pages/dashboard.scss */
+main section.dashboard .content-wrapper .content-block .details-block .columns .budget .value {
+  font-size: calc(var(--global-font-size) * 2);
   line-height: 25px;
 }
-/* line 50, ../scss/pages/dashboard.scss */
-main section.dashboard .content-wrapper .content-block .details-block .columns .budget small {
-  font-size: 18px;
+/* line 52, ../scss/pages/dashboard.scss */
+main section.dashboard .content-wrapper .content-block .details-block .columns .budget .small {
+  font-size: calc(var(--global-font-size) + 2px);
 }
-/* line 54, ../scss/pages/dashboard.scss */
+/* line 56, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .status {
   display: inline-block;
   padding: 0.30rem 1.25rem;
@@ -327,7 +381,7 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 62, ../scss/pages/dashboard.scss */
+/* line 64, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list {
   display: -webkit-box;
   display: -moz-box;
@@ -341,7 +395,7 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   align-items: center;
   column-gap: 20px;
 }
-/* line 66, ../scss/pages/dashboard.scss */
+/* line 68, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .influencer-item {
   display: -webkit-inline-box;
   display: -moz-inline-box;
@@ -361,7 +415,7 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   -webkit-align-items: center;
   align-items: center;
 }
-/* line 70, ../scss/pages/dashboard.scss */
+/* line 72, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .influencer-item .thumbnail {
   display: inline-block;
   position: relative;
@@ -372,7 +426,7 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   -ms-border-radius: 1000px;
   border-radius: 1000px;
 }
-/* line 76, ../scss/pages/dashboard.scss */
+/* line 78, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .influencer-item .thumbnail img {
   width: 100%;
   -webkit-border-radius: 1000px;
@@ -380,7 +434,7 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   -ms-border-radius: 1000px;
   border-radius: 1000px;
 }
-/* line 80, ../scss/pages/dashboard.scss */
+/* line 82, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .influencer-item .thumbnail .notification {
   width: 14px;
   height: 14px;
@@ -394,25 +448,25 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   bottom: 5px;
   right: -5px;
 }
-/* line 91, ../scss/pages/dashboard.scss */
+/* line 93, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .influencer-item .influencer {
   font-size: 12px;
   color: #4d4d4d;
 }
-/* line 96, ../scss/pages/dashboard.scss */
+/* line 98, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .more-influencers {
   color: #4d4d4d;
   text-decoration: none;
   font-weight: 600;
 }
-/* line 106, ../scss/pages/dashboard.scss */
+/* line 108, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper {
   margin-top: 50px;
   display: -ms-grid;
   display: grid;
   gap: 50px;
 }
-/* line 110, ../scss/pages/dashboard.scss */
+/* line 112, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block {
   display: -ms-grid;
   display: grid;
@@ -420,21 +474,21 @@ main section.dashboard .card-wrapper .card-block {
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
-/* line 114, ../scss/pages/dashboard.scss */
+/* line 116, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.coupons {
   -ms-grid-columns: repeat(4, 225px);
   grid-template-columns: repeat(4, 225px);
 }
-/* line 118, ../scss/pages/dashboard.scss */
+/* line 120, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.coupons .ui-card .ui-card-header .title {
-  font-size: 18px;
+  font-size: calc(var(--global-font-size) + 2px);
 }
-/* line 124, ../scss/pages/dashboard.scss */
+/* line 126, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 {
   -ms-grid-columns: 2fr 1fr;
   grid-template-columns: 2fr 1fr;
 }
-/* line 129, ../scss/pages/dashboard.scss */
+/* line 131, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .title-block,
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .graph-info {
   display: -webkit-box;
@@ -448,16 +502,16 @@ main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-ove
   -webkit-align-items: center;
   align-items: center;
 }
-/* line 134, ../scss/pages/dashboard.scss */
+/* line 136, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .graph-info {
   gap: 20px;
 }
-/* line 136, ../scss/pages/dashboard.scss */
+/* line 138, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .graph-info .hint {
   color: #b4b4b6;
   font-weight: 600;
 }
-/* line 139, ../scss/pages/dashboard.scss */
+/* line 141, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .graph-info .hint .indicator {
   display: inline-block;
   width: 12px;
@@ -469,17 +523,17 @@ main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-ove
   border-radius: 1000px;
   background-color: #ccc;
 }
-/* line 149, ../scss/pages/dashboard.scss */
+/* line 151, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .dates {
   color: #7f7f7f;
   font-weight: 700;
 }
-/* line 156, ../scss/pages/dashboard.scss */
+/* line 158, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.influencers-engage .label {
-  font-size: 18px;
+  font-size: calc(var(--global-font-size) + 2px);
   font-weight: 700;
 }
-/* line 163, ../scss/pages/dashboard.scss */
+/* line 165, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card {
   background-color: #ffffff;
   -webkit-border-radius: 20px;
@@ -487,37 +541,37 @@ main section.dashboard .card-wrapper .card-block .ui-card {
   -ms-border-radius: 20px;
   border-radius: 20px;
 }
-/* line 166, ../scss/pages/dashboard.scss */
+/* line 168, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card.active {
   background-color: #F2EAFF;
 }
-/* line 169, ../scss/pages/dashboard.scss */
+/* line 171, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-header,
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-body {
   padding: 1.25rem;
 }
-/* line 173, ../scss/pages/dashboard.scss */
+/* line 175, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-header {
   padding-bottom: 0;
 }
-/* line 175, ../scss/pages/dashboard.scss */
+/* line 177, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-header .title {
-  font-size: 24px;
+  font-size: calc(var(--global-font-size) + 5px);
   font-weight: 700;
 }
-/* line 181, ../scss/pages/dashboard.scss */
+/* line 183, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-body .count {
-  font-size: 32px;
+  font-size: calc(var(--global-font-size) * 2);
   color: #4d4d4d;
   font-weight: 700;
   line-height: initial;
 }
-/* line 187, ../scss/pages/dashboard.scss */
+/* line 189, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-body .description {
   color: #7f7f7f;
   font-weight: 700;
 }
-/* line 191, ../scss/pages/dashboard.scss */
+/* line 193, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-body .progress-wrapper {
   margin-top: 20px;
 }
