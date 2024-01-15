@@ -1,0 +1,29 @@
+@import "../includes/mixins";
+@import "../includes/variables";
+@import "../includes/fonts";
+
+header {
+    font-family: $primaryFont;
+    &.header {
+        .navbar {
+            .navbar-brand {
+
+            }
+            .nav-right {
+                .nav {
+                    .nav-item {
+                        &:last-child {
+                            .nav-link {
+                                padding-right: 0;
+                            }
+                        }
+                        .nav-link {
+                            color: $bodyColor;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

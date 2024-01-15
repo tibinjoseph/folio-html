@@ -9,12 +9,6 @@
     --global-font-size: 15px;
   }
 }
-@media (min-width: 1440px) {
-  /* line 33, ../scss/includes/_variables.scss */
-  :root {
-    --global-font-size: 16px;
-  }
-}
 /* line 4, ../scss/includes/_utils.scss */
 .bgc-primary {
   background-color: #FA3455 !important;
@@ -166,12 +160,6 @@
     --global-font-size: 15px;
   }
 }
-@media (min-width: 1440px) {
-  /* line 33, ../scss/includes/_variables.scss */
-  :root {
-    --global-font-size: 16px;
-  }
-}
 /* line 4, ../scss/components/_button.scss */
 .button {
   border: 1px solid transparent;
@@ -235,12 +223,6 @@
   /* line 28, ../scss/includes/_variables.scss */
   :root {
     --global-font-size: 15px;
-  }
-}
-@media (min-width: 1440px) {
-  /* line 33, ../scss/includes/_variables.scss */
-  :root {
-    --global-font-size: 16px;
   }
 }
 @font-face {
@@ -318,16 +300,38 @@ main section.dashboard {
 main section.dashboard .content-wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 1fr;
-  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
 }
-/* line 20, ../scss/pages/dashboard.scss */
+@media (min-width: 992px) {
+  /* line 15, ../scss/pages/dashboard.scss */
+  main section.dashboard .content-wrapper {
+    -ms-grid-columns: 1fr auto;
+    grid-template-columns: 1fr auto;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 15, ../scss/pages/dashboard.scss */
+  main section.dashboard .content-wrapper {
+    -ms-grid-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+@media (min-width: 1400px) {
+  /* line 15, ../scss/pages/dashboard.scss */
+  main section.dashboard .content-wrapper {
+    -ms-grid-columns: 2fr 530px;
+    grid-template-columns: 2fr 530px;
+  }
+}
+/* line 30, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .title-block .title {
   font-size: calc(var(--global-font-size) * 2);
   font-weight: 700;
   line-height: 1.2;
 }
-/* line 26, ../scss/pages/dashboard.scss */
+/* line 36, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block {
   border-top: 1px solid #8B8B8B;
   border-bottom: 1px solid #8b8b8b;
@@ -335,41 +339,70 @@ main section.dashboard .content-wrapper .content-block .details-block {
   margin-top: 40px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 320px;
-  grid-template-columns: 1fr 1fr 320px;
+  -ms-grid-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
-/* line 33, ../scss/pages/dashboard.scss */
+@media (max-width: 767px) {
+  /* line 36, ../scss/pages/dashboard.scss */
+  main section.dashboard .content-wrapper .content-block .details-block {
+    grid-gap: 20px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 36, ../scss/pages/dashboard.scss */
+  main section.dashboard .content-wrapper .content-block .details-block {
+    -ms-grid-columns: 1fr 1fr 320px;
+    grid-template-columns: 1fr 1fr 320px;
+  }
+}
+/* line 49, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns {
   padding-right: 25px;
 }
-/* line 35, ../scss/pages/dashboard.scss */
-main section.dashboard .content-wrapper .content-block .details-block .columns:not(:first-child) {
-  padding-left: 25px;
+@media (max-width: 767px) {
+  /* line 52, ../scss/pages/dashboard.scss */
+  main section.dashboard .content-wrapper .content-block .details-block .columns:last-child {
+    grid-column: span 2;
+    border-top: 1px solid #8b8b8b;
+    padding-top: 20px;
+  }
+  /* line 57, ../scss/pages/dashboard.scss */
+  main section.dashboard .content-wrapper .content-block .details-block .columns:first-child {
+    border-right: 1px solid #8b8b8b;
+  }
 }
-/* line 38, ../scss/pages/dashboard.scss */
-main section.dashboard .content-wrapper .content-block .details-block .columns:not(:last-child) {
-  border-right: 1px solid #8b8b8b;
+@media (min-width: 768px) {
+  /* line 61, ../scss/pages/dashboard.scss */
+  main section.dashboard .content-wrapper .content-block .details-block .columns:not(:first-child) {
+    padding-left: 25px;
+  }
 }
-/* line 41, ../scss/pages/dashboard.scss */
+@media (min-width: 768px) {
+  /* line 66, ../scss/pages/dashboard.scss */
+  main section.dashboard .content-wrapper .content-block .details-block .columns:not(:last-child) {
+    border-right: 1px solid #8b8b8b;
+  }
+}
+/* line 71, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .label {
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
-/* line 45, ../scss/pages/dashboard.scss */
+/* line 75, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .budget {
   font-weight: 700;
   color: #4d4d4d;
 }
-/* line 48, ../scss/pages/dashboard.scss */
+/* line 78, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .budget .value {
   font-size: calc(var(--global-font-size) * 2);
   line-height: 25px;
 }
-/* line 52, ../scss/pages/dashboard.scss */
+/* line 82, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .budget .small {
   font-size: calc(var(--global-font-size) + 2px);
 }
-/* line 56, ../scss/pages/dashboard.scss */
+/* line 86, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .status {
   display: inline-block;
   padding: 0.30rem 1.25rem;
@@ -381,7 +414,7 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 64, ../scss/pages/dashboard.scss */
+/* line 94, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list {
   display: -webkit-box;
   display: -moz-box;
@@ -395,7 +428,7 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   align-items: center;
   column-gap: 20px;
 }
-/* line 68, ../scss/pages/dashboard.scss */
+/* line 98, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .influencer-item {
   display: -webkit-inline-box;
   display: -moz-inline-box;
@@ -415,7 +448,7 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   -webkit-align-items: center;
   align-items: center;
 }
-/* line 72, ../scss/pages/dashboard.scss */
+/* line 102, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .influencer-item .thumbnail {
   display: inline-block;
   position: relative;
@@ -426,7 +459,7 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   -ms-border-radius: 1000px;
   border-radius: 1000px;
 }
-/* line 78, ../scss/pages/dashboard.scss */
+/* line 108, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .influencer-item .thumbnail img {
   width: 100%;
   -webkit-border-radius: 1000px;
@@ -434,7 +467,7 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   -ms-border-radius: 1000px;
   border-radius: 1000px;
 }
-/* line 82, ../scss/pages/dashboard.scss */
+/* line 112, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .influencer-item .thumbnail .notification {
   width: 14px;
   height: 14px;
@@ -448,47 +481,102 @@ main section.dashboard .content-wrapper .content-block .details-block .columns .
   bottom: 5px;
   right: -5px;
 }
-/* line 93, ../scss/pages/dashboard.scss */
+/* line 123, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .influencer-item .influencer {
   font-size: 12px;
   color: #4d4d4d;
 }
-/* line 98, ../scss/pages/dashboard.scss */
+/* line 128, ../scss/pages/dashboard.scss */
 main section.dashboard .content-wrapper .content-block .details-block .columns .influencer-list .more-influencers {
   color: #4d4d4d;
   text-decoration: none;
   font-weight: 600;
 }
-/* line 108, ../scss/pages/dashboard.scss */
+/* line 138, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper {
   margin-top: 50px;
   display: -ms-grid;
   display: grid;
   gap: 50px;
 }
-/* line 112, ../scss/pages/dashboard.scss */
+/* line 142, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  gap: 15px;
 }
-/* line 116, ../scss/pages/dashboard.scss */
+@media (min-width: 376px) {
+  /* line 142, ../scss/pages/dashboard.scss */
+  main section.dashboard .card-wrapper .card-block {
+    -ms-grid-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 481px) {
+  /* line 142, ../scss/pages/dashboard.scss */
+  main section.dashboard .card-wrapper .card-block {
+    gap: 25px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 142, ../scss/pages/dashboard.scss */
+  main section.dashboard .card-wrapper .card-block {
+    -ms-grid-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* line 155, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.coupons {
-  -ms-grid-columns: repeat(4, 225px);
-  grid-template-columns: repeat(4, 225px);
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
 }
-/* line 120, ../scss/pages/dashboard.scss */
+@media (min-width: 376px) {
+  /* line 155, ../scss/pages/dashboard.scss */
+  main section.dashboard .card-wrapper .card-block.coupons {
+    -ms-grid-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  /* line 155, ../scss/pages/dashboard.scss */
+  main section.dashboard .card-wrapper .card-block.coupons {
+    -ms-grid-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  /* line 155, ../scss/pages/dashboard.scss */
+  main section.dashboard .card-wrapper .card-block.coupons {
+    -ms-grid-columns: repeat(4, 225px);
+    grid-template-columns: repeat(4, 225px);
+  }
+}
+@media (min-width: 1400px) {
+  /* line 155, ../scss/pages/dashboard.scss */
+  main section.dashboard .card-wrapper .card-block.coupons {
+    -ms-grid-columns: repeat(4, 265px);
+    grid-template-columns: repeat(4, 265px);
+  }
+}
+/* line 171, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.coupons .ui-card .ui-card-header .title {
   font-size: calc(var(--global-font-size) + 2px);
 }
-/* line 126, ../scss/pages/dashboard.scss */
+/* line 177, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 {
-  -ms-grid-columns: 2fr 1fr;
-  grid-template-columns: 2fr 1fr;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
 }
-/* line 131, ../scss/pages/dashboard.scss */
+@media (min-width: 992px) {
+  /* line 177, ../scss/pages/dashboard.scss */
+  main section.dashboard .card-wrapper .card-block.widgets2-1 {
+    -ms-grid-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+/* line 185, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .title-block,
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .graph-info {
   display: -webkit-box;
@@ -501,17 +589,17 @@ main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-ove
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-}
-/* line 136, ../scss/pages/dashboard.scss */
-main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .graph-info {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 20px;
 }
-/* line 138, ../scss/pages/dashboard.scss */
+/* line 193, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .graph-info .hint {
   color: #b4b4b6;
   font-weight: 600;
 }
-/* line 141, ../scss/pages/dashboard.scss */
+/* line 196, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .graph-info .hint .indicator {
   display: inline-block;
   width: 12px;
@@ -523,17 +611,17 @@ main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-ove
   border-radius: 1000px;
   background-color: #ccc;
 }
-/* line 151, ../scss/pages/dashboard.scss */
+/* line 206, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.camping-overview .ui-card-header .dates {
   color: #7f7f7f;
   font-weight: 700;
 }
-/* line 158, ../scss/pages/dashboard.scss */
+/* line 213, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block.widgets2-1 .ui-card.influencers-engage .label {
   font-size: calc(var(--global-font-size) + 2px);
   font-weight: 700;
 }
-/* line 165, ../scss/pages/dashboard.scss */
+/* line 220, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card {
   background-color: #ffffff;
   -webkit-border-radius: 20px;
@@ -541,37 +629,118 @@ main section.dashboard .card-wrapper .card-block .ui-card {
   -ms-border-radius: 20px;
   border-radius: 20px;
 }
-/* line 168, ../scss/pages/dashboard.scss */
+/* line 223, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card.active {
   background-color: #F2EAFF;
 }
-/* line 171, ../scss/pages/dashboard.scss */
+/* line 226, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-header,
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-body {
   padding: 1.25rem;
 }
-/* line 175, ../scss/pages/dashboard.scss */
+/* line 230, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-header {
   padding-bottom: 0;
 }
-/* line 177, ../scss/pages/dashboard.scss */
+/* line 232, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-header .title {
   font-size: calc(var(--global-font-size) + 5px);
   font-weight: 700;
 }
-/* line 183, ../scss/pages/dashboard.scss */
+/* line 238, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-body .count {
   font-size: calc(var(--global-font-size) * 2);
   color: #4d4d4d;
   font-weight: 700;
   line-height: initial;
 }
-/* line 189, ../scss/pages/dashboard.scss */
+/* line 244, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-body .description {
   color: #7f7f7f;
   font-weight: 700;
 }
-/* line 193, ../scss/pages/dashboard.scss */
+/* line 248, ../scss/pages/dashboard.scss */
 main section.dashboard .card-wrapper .card-block .ui-card .ui-card-body .progress-wrapper {
   margin-top: 20px;
+}
+
+/* line 24, ../scss/includes/_variables.scss */
+:root {
+  --global-font-size: 14px;
+}
+
+@media (min-width: 576px) {
+  /* line 28, ../scss/includes/_variables.scss */
+  :root {
+    --global-font-size: 15px;
+  }
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff"), url("../fonts/SFProDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url("../fonts/SFProDisplay-RegularItalic.woff2") format("woff2"), url("../fontsS/FProDisplay-RegularItalic.woff") format("woff"), url("../fontsS/FProDisplay-RegularItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff"), url("../fonts/SFProDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url("../fonts/SFProDisplay-MediumItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-MediumItalic.woff") format("woff"), url("../fonts/SFProDisplay-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff"), url("../fonts/SFProDisplay-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url("../fonts/SFProDisplay-SemiboldItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-SemiboldItalic.woff") format("woff"), url("../fonts/SFProDisplay-SemiboldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff"), url("../fonts/SFProDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url("../fonts/SFProDisplay-BoldItalic.woff2") format("woff2"), url("../fonts/SFProDisplay-BoldItalic.woff") format("woff"), url("../fonts/SFProDisplay-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+/* line 5, ../scss/pages/header.scss */
+header {
+  font-family: "SF Pro Display", sans-serif;
+}
+/* line 16, ../scss/pages/header.scss */
+header.header .navbar .nav-right .nav .nav-item:last-child .nav-link {
+  padding-right: 0;
+}
+/* line 20, ../scss/pages/header.scss */
+header.header .navbar .nav-right .nav .nav-item .nav-link {
+  color: #292929;
+  font-weight: 600;
 }

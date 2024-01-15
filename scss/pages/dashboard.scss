@@ -14,7 +14,17 @@ main {
             rgba(246,246,248,0) 0%, rgba(246,246,248,1) 100%);
             .content-wrapper {
                 @include gridbox;
-                @include grid-template-columns(2fr 1fr);
+                gap: 25px;
+                @include grid-template-columns(1fr);
+                @include breakpoint(mn992) {
+                    @include grid-template-columns(1fr auto);
+                }
+                @include breakpoint(mn1200) {
+                    @include grid-template-columns(2fr 1fr);
+                }
+                @include breakpoint(mn1400) {
+                    @include grid-template-columns(2fr 530px);
+                }
                 .content-block {
                     .title-block {
                         .title {
@@ -29,14 +39,34 @@ main {
                         padding: 20px 0;
                         margin-top: 40px;
                         @include gridbox;
-                        @include grid-template-columns(1fr 1fr 320px);
+                        @include grid-template-columns(repeat(2, 1fr));
+                        @include breakpoint(mx767) {
+                            grid-gap: 20px;
+                        }
+                        @include breakpoint(mn768) {
+                            @include grid-template-columns(1fr 1fr 320px);
+                        }
                         .columns {
                             padding-right: 25px;
+                            @include breakpoint(mx767) {
+                                &:last-child {
+                                    grid-column: span 2;
+                                    border-top: 1px solid #8b8b8b;
+                                    padding-top: 20px;
+                                }
+                                &:first-child {
+                                    border-right: 1px solid #8b8b8b;
+                                }
+                            }
                             &:not(:first-child) {
-                                padding-left: 25px;
+                                @include breakpoint(mn768) {
+                                    padding-left: 25px;
+                                }
                             }
                             &:not(:last-child) {
-                                border-right: 1px solid #8b8b8b;
+                                @include breakpoint(mn768) {
+                                    border-right: 1px solid #8b8b8b;
+                                }
                             }
                             .label {
                                 font-weight: 700;
@@ -111,10 +141,31 @@ main {
                 gap: 50px;
                 .card-block {
                     @include gridbox;
-                    @include grid-template-columns(repeat(3, 1fr));
-                    gap: 25px;
+                    @include grid-template-columns(1fr);
+                    gap: 15px;
+                    @include breakpoint(mn376) {
+                        @include grid-template-columns(repeat(2, 1fr));
+                    }
+                    @include breakpoint(mn481) {
+                        gap: 25px;
+                    }
+                    @include breakpoint(mn992) {
+                        @include grid-template-columns(repeat(3, 1fr));
+                    }
                     &.coupons {
-                        @include grid-template-columns(repeat(4, 225px));
+                        @include grid-template-columns(1fr);
+                        @include breakpoint(mn376) {
+                            @include grid-template-columns(repeat(2, 1fr));
+                        }
+                        @include breakpoint(mn992) {
+                            @include grid-template-columns(repeat(4, 1fr));
+                        }
+                        @include breakpoint(mn1200) {
+                            @include grid-template-columns(repeat(4, 225px));
+                        }
+                        @include breakpoint(mn1400) {
+                            @include grid-template-columns(repeat(4, 265px));
+                        }
                         .ui-card {
                             .ui-card-header {
                                 .title {
@@ -124,7 +175,10 @@ main {
                         }
                     }
                     &.widgets2-1 {
-                        @include grid-template-columns(2fr 1fr);
+                        @include grid-template-columns(1fr);
+                        @include breakpoint(mn992) {
+                            @include grid-template-columns(2fr 1fr);
+                        }
                         .ui-card {
                             &.camping-overview {
                                 .ui-card-header {
@@ -132,9 +186,10 @@ main {
                                     .graph-info {
                                         @include flexbox;
                                         @include align-items(center);
+                                        @include flex-wrap(wrap);
+                                        gap: 20px;
                                     }
                                     .graph-info {
-                                        gap: 20px;
                                         .hint {
                                             color: #b4b4b6;
                                             font-weight: 600;

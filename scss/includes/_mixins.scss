@@ -34,7 +34,7 @@
 
 @mixin breakpoint($point) {
     @if $point==mn320 {
-        @media (max-width: 320px) {
+        @media (min-width: 320px) {
             @content ;
         }
     }
@@ -158,14 +158,14 @@
         }
     }
 
-    @else if $point==mx1439 {
-        @media (max-width: 1439px) {
+    @else if $point==mx1399 {
+        @media (max-width: 1399px) {
             @content ;
         }
     }
 
-    @else if $point==mn1440 {
-        @media (min-width: 1440px) {
+    @else if $point==mn1400 {
+        @media (min-width: 1400px) {
             @content ;
         }
     }
